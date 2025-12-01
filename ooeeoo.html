@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>The Worst Website Ever</title>
+<style>
+  /* TERRIBLE GLOBAL STYLES */
+  html,body{
+    height:100%;
+    margin:0;
+    padding:0;
+    /* obnoxious moving gradient background */
+    background: linear-gradient(225deg, #ff00ff 0%, #00ffff 25%, #ffff00 50%, #00ff00 75%, #ff0000 100%);
+    background-size: 400% 400%;
+    animation: puke 20s linear infinite;
+    font-family: "Comic Sans MS", "Impact", "Brush Script MT", sans-serif;
+    color: rgba(255,255,255,0.95);
+  }
+  @keyframes puke {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+
+  /* awful container: cramped, tiny line-height */
+  .container{
+    width: 860px;               /* too wide for some screens, causing horizontal scroll */
+    margin: 8px auto;           /* cramped to top */
+    padding: 6px;               /* tiny padding */
+    border: 6px dashed rgba(0,0,0,0.6);
+    background:
+      repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0 6px, rgba(0,0,0,0.02) 6px 12px),
+      rgba(255,255,255,0.03);
+    box-shadow: 0 0 40px 8px rgba(0,0,0,0.4);
+    transform: skewY(-1deg) rotate(-0.5deg);
+  }
+
+  /* Horrible heading */
+  h1{
+    margin:6px 0;
+    font-size:48px;
+    letter-spacing:8px;
+    text-transform:uppercase;
+    line-height:0.6; /* cramped */
+    color: #000000;
+    text-shadow: 3px 3px 0 #ff00ff, -3px -3px 0 #00ffff;
+    background: linear-gradient(90deg,#ffea00,#ff00a8);
+    display:inline-block;
+    padding:2px 8px;
+    border-radius: 4px;
+  }
+
+  /* crushed paragraph text: tiny and unreadable */
+  p{
+    margin: 4px 0;
+    font-size: 9px;        /* tiny */
+    line-height: 0.9;      /* cramped */
+    max-width: 680px;
+    text-align: justify;
+    text-justify: inter-word;
+    letter-spacing: 0.5px;
+    transform: scaleY(0.95);
+  }
+
+  /* terrible highlighted text */
+  .highlight{
+    background: linear-gradient(90deg,#00ff00 0%, #ffff00 50%, #ff0000 100%);
+    color: #000000;
+    padding: 0 3px;
+    border-radius: 2px;
+    box-shadow: 0 0 8px #ffff00;
+  }
+
+  /* Links that clash and scream */
+  a{
+    color: #ff0066;
+    background: rgba(0,255,255,0.08);
+    text-decoration: underline wavy #00ff00 3px;
+    padding: 1px 2px;
+    margin-right:6px;
+    font-weight: 900;
+    font-size: 11px;
+  }
+  a:hover{
+    color: #00ff00;
+    background: #000000;
+    transform: rotate(-2deg) scale(1.08);
+    text-decoration: none;
+    text-shadow: 2px 2px 0 #ff0000;
+  }
+
+  /* lots of links crammed together */
+  .links{ display:flex; gap:4px; flex-wrap:wrap; margin:6px 0 10px 0 }
+
+  /* blocks with bad contrast */
+  .card{
+    background: linear-gradient(180deg, rgba(0,0,0,0.25), rgba(255,255,255,0.02));
+    padding:6px;
+    margin:6px 0;
+    border-left: 10px solid #ff9900;
+    box-shadow: 6px 6px 0 rgba(0,0,0,0.5);
+    transform: skewX(-2deg);
+  }
+
+  /* unreadable fonts / text effects */
+  .hard-to-read{
+    font-family: "Comic Sans MS", "Papyrus", "Impact", cursive;
+    font-size: 13px;
+    color: rgba(255,230,0,0.6);
+    text-shadow: 0 1px 0 #000, 0 2px 0 #111, 0 3px 0 #222, 2px 2px 10px rgba(0,0,0,0.8);
+    filter: blur(0.3px);
+    transform: rotate(-0.8deg);
+  }
+
+  /* tiny navigation squeezed to the left */
+  nav{
+    float:left;
+    width:150px;
+    margin-right:8px;
+    margin-top:4px;
+    background: repeating-linear-gradient(#ff00ff 0 3px, #ff6600 3px 6px);
+    padding:4px;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.3);
+  }
+  nav ul{ list-style: none; padding:0; margin:0; font-size:10px }
+  nav li{ margin:2px 0; line-height:0.9 }
+
+  /* ugly footer stuck to the bottom of the container awkwardly */
+  footer{
+    margin-top:8px;
+    padding:6px;
+    font-size:10px;
+    color:#222;
+    background: linear-gradient(90deg,#ffffffaa,#00000011);
+    border-top: 4px double #00ff88;
+  }
+
+  /* blinking, distracting badge */
+  .blink{
+    display:inline-block;
+    padding:2px 6px;
+    margin-left:6px;
+    background:#ff0000;
+    color:#ffff00;
+    font-weight:900;
+    animation: blink 1s steps(2, jump-end) infinite;
+  }
+  @keyframes blink{ 0%{opacity:1}50%{opacity:0.05}100%{opacity:1} }
+
+  /* tiny buttons that don't match */
+  button{
+    padding:4px 6px;
+    font-size:10px;
+    border-radius:0;
+    border:3px outset #00ffcc;
+    background: linear-gradient(45deg,#ff00ff,#00ff00);
+    box-shadow: 2px 2px 0 #000000;
+    cursor:pointer;
+  }
+
+  /* additional chaos: floating rotated banner */
+  .banner{
+    position: absolute;
+    right: -120px;
+    top: 40px;
+    transform: rotate(18deg);
+    background: linear-gradient(90deg,#00ffff,#ff00ff);
+    padding:8px 24px;
+    font-size:22px;
+    border:3px solid #ffff00;
+    color:#000;
+    text-shadow: none;
+  }
+
+  /* purposely terrible responsive: blow up on small screens */
+  @media (max-width:900px){
+    .container{ width:1200px } /* will force horizontal scroll on purpose */
+    nav{ display:block; }
+  }
+</style>
+</head>
+<body>
+  <div class="banner">SALE!!! FREE BAD UX</div>
+  <div class="container">
+    <h1>WELCOME</h1>
+    <span class="blink">IMPORTANT</span>
+
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Terms</a></li>
+      </ul>
+    </nav>
+
+    <div style="margin-left:164px"> <!-- force cramped layout with nav -->
+      <div class="card">
+        <p class="hard-to-read">
+          This is the <span class="highlight">official</span> paragraph. It is deliberately tiny, cramped,
+          and uses a mishmash of fonts and effects to be almost unreadable. We also add long, long lines
+          so you have to squint and scroll sideways to read. Try clicking some <a href="#">links</a> or the
+          <a href="#">next page</a> to experience the worst navigation ever.
+        </p>
+
+        <div class="links" aria-hidden="true">
+          <a href="#">Link One</a>
+          <a href="#">Link Two</a>
+          <a href="#">This Link is Very Long and Pointless</a>
+          <a href="#">We Love Underlines</a>
+          <a href="#">Another Link</a>
+          <a href="#">Click Me!</a>
+          <a href="#">Broken Link</a>
+          <a href="#">Hover Me</a>
+        </div>
+
+        <p style="font-size:11px;line-height:0.8; margin-top:6px;">
+          Secondary text is even worse: <span class="highlight">blinding</span> color combos, <strong style="color:#00ff88">bad contrast</strong>, and rotated elements.
+          <button onclick="alert('You clicked a useless button!')">Do Something</button>
+        </p>
+      </div>
+
+      <div class="card">
+        <p>
+          More content crammed into the same small vertical space. We reduce line-height, increase letter-spacing,
+          and toss in random <a href="#">inline links</a> to make the eye hurt. Also here's a list:
+        </p>
+        <ul style="margin:4px 0 0 18px; font-size:10px; line-height:0.85;">
+          <li>Too loud color</li>
+          <li>Too many underlines</li>
+          <li>Bad spacing</li>
+          <li>Unreadable font choice</li>
+        </ul>
+      </div>
+
+      <div class="card" style="display:flex; gap:8px; align-items:flex-start;">
+        <div style="flex:1">
+          <p style="font-size:12px; line-height:0.9;">
+            Tiny sidebar-like content with <span class="highlight">highlighted garbage</span>. The color palette was chosen by
+            throwing crayons at the wall.
+          </p>
+        </div>
+        <div style="flex:1; border-left:6px solid #ff00ff; padding-left:8px;">
+          <p style="font-size:11px; line-height:0.9; color:#ffffff44; text-shadow: 1px 1px 0 #000;">
+            A fading block with barely visible text and bad shadowing to make legibility worse.
+          </p>
+        </div>
+      </div>
+
+      <footer>
+        <p style="margin:0; font-size:11px;">
+          © 2025 The Worst Website — <span style="text-decoration:line-through">Accessibility</span> Not Included.
+          <a href="#">Privacy</a> <a href="#">Sitemap</a>
+        </p>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
